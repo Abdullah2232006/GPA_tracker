@@ -16,6 +16,8 @@ return new class extends Migration
             $table->integer("semester");
             $table->float("gpa");
             $table->timestamps();
+
+            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
         });
     }
 
